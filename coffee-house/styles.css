@@ -16,7 +16,7 @@ body {
 
 .container {
   width: 100%;
-  padding: 20px 0px, 40px, 0px;
+  padding: 20px 0 40px 0;
   margin: 0 auto;
 }
 a {
@@ -44,7 +44,6 @@ footer {
   display: flex;
 }
 .nav-menu {
-  margin-top: 20px;
   margin-bottom: 20px;
   align-items: center;
   justify-content: space-between;
@@ -117,7 +116,6 @@ h1 ~ p {
   border-radius: 0;
 }
 .nav-menu a {
-  /* text-decoration: none; */
   color: #403f3d;
 }
 .logo-img {
@@ -137,17 +135,18 @@ h1 ~ p {
 }
 
 .menu-btn a {
-  /* text-decoration: none; */
   color: #403f3d;
   font-weight: 600;
   font-size: 16px;
 }
+
 .menu-btn a:hover::after {
   content: url("./assets/coffee-cup.png");
-  margin-left: 10px;
+  margin-left: 100%;
   width: 55px;
   position: absolute;
   top: 50%;
+  left: 5px;
   transform: translateY(-50%);
   transition: opacity 0.3s ease;
 }
@@ -260,8 +259,8 @@ h3 {
 }
 
 .coffee-slider p:last-of-type {
-  font-size: 600;
   font-size: 24px;
+  font-weight: 600;
 }
 
 .slider-lines span {
@@ -280,12 +279,8 @@ h3 {
   background-color: #403f3d;
 }
 
-.about-section p {
-  font-weight: 600;
-  font-size: 60px;
-  line-height: 75px;
-  color: #403f3d;
-  margin-bottom: 40px;
+.about-section h2 {
+  text-align: left;
 }
 
 .about-section img {
@@ -339,7 +334,7 @@ section {
   align-items: center;
 }
 
-.mobile-app article {
+.mobile-app div:first-child {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -352,9 +347,6 @@ section {
   border: 1px solid #665f55;
   padding: 12px 20px 12px 20px;
   display: inline-block;
-}
-
-.mobile-app button {
   display: flex;
   cursor: pointer;
 }
@@ -368,16 +360,11 @@ section {
 }
 
 .app-text {
-  width: 78px;
-  height: 40px;
-  gap: 2px;
-  display: flex;
-  flex-direction: column;
+  text-align: left;
 }
 
 .second-icon {
-  width: 93px;
-  justify-content: baseline;
+  width: 92px;
 }
 
 .mobile-app button .small-text {
@@ -400,6 +387,20 @@ section {
 .button-container {
   display: flex;
   gap: 20px;
+}
+.button-container button {
+  display: flex;
+  width: 200px;
+  padding: 12px 20px;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .mobile-app button:hover span {
@@ -645,7 +646,6 @@ footer h2 span {
 }
 
 .text-container {
-  /* display: flex; */
   display: flex;
   padding: 20px;
   flex-direction: column;
