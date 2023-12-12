@@ -7,7 +7,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  width: 1440px;
+  max-width: 1440px;
   min-height: 100vh;
   background-color: #e1d4c9;
   font-family: "Inter", sans-serif;
@@ -16,7 +16,7 @@ body {
 
 .container {
   max-width: 1440px;
-  width: 100%;
+  width: 100vw;
   padding: 20px 0 40px 0;
   margin: 0 auto;
 }
@@ -27,7 +27,7 @@ a {
 .header,
 section,
 footer {
-  width: 1360px;
+  max-width: 1360px;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -35,7 +35,7 @@ footer {
   width: 100%;
   border-radius: 40px;
 }
-.nav-menu > a > img {
+.logo-img {
   width: 100px;
   height: auto;
 }
@@ -47,6 +47,32 @@ footer {
 .nav-menu {
   margin-bottom: 20px;
   align-items: center;
+}
+.header-menu {
+  width: 44px;
+  border: 1px solid #665f55;
+  padding: 8px;
+  display: none;
+}
+.dropdown-menu {
+  /* width: 44px; */
+  /* border: 1px solid #665f55; */
+  width: 16px;
+  height: 8px;
+  display: none;
+  /* padding: 6px; */
+}
+
+.dropdown-border {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  border: 1px solid #665f55;
+  display: none;
+}
+.text-content {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
 }
 .nav-bar {
@@ -103,11 +129,15 @@ h1 ~ p {
 .menu-click {
   display: flex;
   flex-direction: row;
-  gap: 4px;
-  font-weight: 600;
   align-items: center;
 }
 
+.menu-click a {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  font-weight: 600;
+}
 .menu-click img {
   display: inline-block;
   width: 20px;
@@ -115,6 +145,7 @@ h1 ~ p {
   align-self: baseline;
   vertical-align: top;
   border-radius: 0;
+  font-weight: 600;
 }
 .nav-menu a {
   color: #403f3d;
@@ -292,7 +323,7 @@ h3 {
 }
 
 .about-section .collage {
-  width: 1360px;
+  max-width: 1360px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 190px 1fr;
@@ -694,4 +725,149 @@ footer h2 span {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  body {
+    max-width: 1400px;
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  .hide-nav .logo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  /*.hide-nav .header-menu:visited .text-content {
+    display: none;
+  } */
+
+  .hide-nav .nav-menu {
+    display: flex;
+    /* flex-direction: column; */
+  }
+
+  .hide-nav .text-content {
+    display: none;
+  }
+  .hide-nav .text-content .nav-bar ul li,
+  .hide-nav .menu-click {
+    font-size: 32px;
+  }
+  .hide-nav .menu-click img {
+    width: 40px;
+    height: 40px;
+  }
+  .hide-nav .menu-click a {
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .hide-nav .menu-click {
+    display: none;
+  }
+  .hide-nav.nav-bar,
+  .hide-nav .nav-bar ul {
+    display: none;
+  }
+  .header-menu {
+    width: 44px;
+    height: 44px;
+    display: block;
+  }
+  .dropdown-menu {
+    display: block;
+    text-align: center;
+  }
+  .dropdown-border {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-menu li a::after {
+    display: none;
+  }
+  ul li {
+    text-decoration: none;
+  }
+  .header img {
+    /* width: 768px;
+    height: 644px;
+    padding: 0px, 40px, 0px, 40px; */
+  }
+
+  .coffee-menu {
+    margin: 0 40px;
+  }
+  .image-text img {
+    min-width: 768px;
+    min-height: 644px;
+    padding: 0px, 40px, 0px, 40px;
+    object-fit: cover;
+  }
+  .enjoy {
+    width: 530px;
+  }
+  .about-section .collage {
+    /* display: flex; */
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; */
+    grid-template-columns: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .two,
+  .three {
+    display: none;
+  }
+
+  .collage img {
+    max-width: 688px;
+  }
+  .collage .grid-item {
+    grid-area: 1 / 0 / 1 / 0;
+    width: 688px;
+  }
+
+  .mobile-app {
+    flex-direction: column;
+  }
+
+  footer {
+    height: 100vh;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  footer article,
+  footer .contact-info {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .offer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  .espresso,
+  .latte,
+  .latte-macchiato,
+  .coffee-cognac {
+    display: none;
+  }
+  .menu-items:nth-child(5),
+  .menu-items:nth-child(6),
+  .menu-items:nth-child(7),
+  .menu-items:nth-child(8) {
+    display: none;
+  }
 }

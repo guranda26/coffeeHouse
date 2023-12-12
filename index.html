@@ -20,23 +20,38 @@
   </head>
   <body>
     <div class="container">
-      <header class="header" id="home">
-        <div class="nav-menu">
-          <a href="#home" class="logo-img"
-            ><img src="./assets/logo.png" alt="company logo"
-          /></a>
-          <nav class="nav-bar">
-            <ul>
-              <li><a href="#favorites-coffee">Favorite coffee</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#mobile-app">Mobile app</a></li>
-              <li><a href="#contact">Contact us</a></li>
-            </ul>
-          </nav>
-          <span class="menu-click">
-            <a href="./menu.html">Menu </a>
-            <img src="./assets/coffee-cup.png" alt="coffee cup icon" />
-          </span>
+      <header class="header hide-nav" id="home">
+        <div class="nav-menu" id="main-menu">
+          <div class="logo-container">
+            <a href="#home" class="logo-img"
+              ><img src="./assets/logo.png" alt="company logo"
+            /></a>
+            <a
+              href="burgerMenu.html#burger-menu"
+              class="dropdown-border"
+              id="header-menu"
+              ><img
+                src="./assets/dropdown-menu.svg"
+                alt="button-icon"
+                class="dropdown-menu"
+            /></a>
+          </div>
+          <div class="text-content">
+            <nav class="nav-bar">
+              <ul>
+                <li><a href="#favorites-coffee">Favorite coffee</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#mobile-app">Mobile app</a></li>
+                <li><a href="#contact">Contact us</a></li>
+              </ul>
+            </nav>
+            <span class="menu-click">
+              <a href="./menu.html"
+                >Menu
+                <img src="./assets/coffee-cup.svg" alt="coffee cup icon" />
+              </a>
+            </span>
+          </div>
         </div>
         <div class="image-text">
           <img src="./assets/img-hero.jpeg" alt="main coffee image" />
