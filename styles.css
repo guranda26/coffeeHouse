@@ -483,6 +483,14 @@ footer li {
   gap: 6px;
 }
 
+footer li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: #e1d4c9;
+  font-weight: 600;
+}
+
 footer li .last-word span {
   margin-left: 4px;
 }
