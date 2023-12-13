@@ -1,24 +1,14 @@
-@media screen and (min-width: 768px) and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
   body {
     max-width: 1400px;
     width: 100vw;
     margin: 0 auto;
   }
   .nav-menu {
-    /* display: none; */
-    /* flex-direction: column; */
-
     height: 100vh;
-    /* flex-direction: column; */
   }
 
-  .logo-img {
-    /* display: none; */
-    /* display: block; */
-    /* width: 100%; */
-  }
   .logo-container {
-    /* background-color: red; */
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -30,7 +20,6 @@
   }
 
   .nav-menu {
-    /* align-items: normal; */
     display: flex;
     flex-direction: column;
   }
@@ -40,7 +29,6 @@
     align-items: center;
     padding: 60px 40px;
     gap: 100px;
-    /* flex: 1 0 0; */
   }
   .text-content .nav-bar ul li,
   .menu-click {
@@ -57,9 +45,6 @@
 
   .nav-menu ul {
     flex-direction: column;
-    /* justify-content: space-around; */
-    /* justify-content: baseline; */
-    /* gap: 20px; */
   }
   .nav-bar,
   .nav-bar ul {

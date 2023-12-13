@@ -426,6 +426,7 @@ section {
   padding: 12px 20px;
   align-items: center;
   gap: 8px;
+  background-color: transparent;
 }
 
 .app-button {
@@ -614,6 +615,10 @@ footer h2 span {
   border: 1px solid #c1b6ad;
 }
 
+.small-icon {
+  width: 20px;
+  height: 20px;
+}
 .layout:hover {
   transform: scale(1.05);
 }
@@ -727,7 +732,7 @@ footer h2 span {
   line-height: 24px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
   body {
     max-width: 1400px;
     width: 100vw;
@@ -741,13 +746,8 @@ footer h2 span {
     align-items: center;
   }
 
-  /*.hide-nav .header-menu:visited .text-content {
-    display: none;
-  } */
-
   .hide-nav .nav-menu {
     display: flex;
-    /* flex-direction: column; */
   }
 
   .hide-nav .text-content {
@@ -792,11 +792,6 @@ footer h2 span {
   ul li {
     text-decoration: none;
   }
-  .header img {
-    /* width: 768px;
-    height: 644px;
-    padding: 0px, 40px, 0px, 40px; */
-  }
 
   .coffee-menu {
     margin: 0 40px;
@@ -807,25 +802,53 @@ footer h2 span {
     padding: 0px, 40px, 0px, 40px;
     object-fit: cover;
   }
+
   .enjoy {
     width: 530px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .enjoy h1 {
+    font-size: 72px;
   }
   .about-section .collage {
-    /* display: flex; */
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr; */
     grid-template-columns: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
+  .coffee-slider .arrow,
+  .button-container,
+  .social-icons,
+  .nav-bar {
+    pointer-events: none;
+  }
+
+  .menu-btn a:hover::after {
+    content: none;
+  }
+  .menu-btn a:hover {
+    pointer-events: none;
+    right: 0;
+  }
+  .menu-btn {
+    position: relative;
+  }
+
+  .menu-btn a:hover {
+    pointer-events: none;
+  }
+  .menu-btn span:hover {
+    pointer-events: none;
+  }
+
   .two,
   .three {
     display: none;
   }
-
   .collage img {
     max-width: 688px;
   }
@@ -869,5 +892,151 @@ footer h2 span {
   .menu-items:nth-child(7),
   .menu-items:nth-child(8) {
     display: none;
+  }
+
+  .menu-btn span::after {
+    content: " ";
+    background-image: url("./assets/coffee-icon-small.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 30%;
+    right: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .image-text img {
+    min-width: 348px;
+    min-height: 552px;
+    max-height: auto;
+    padding: 60px, 16px, 60px, 16px;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+  .enjoy h1 {
+    font-size: 42px;
+    line-height: 48.3px;
+  }
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .image-text article {
+    left: 0;
+    top: 5em;
+    margin: 0 1em;
+    width: auto;
+  }
+  .coffee-slider h2 {
+    text-align: center;
+    width: 75%;
+  }
+  .enjoy {
+    left: 0;
+    min-height: 432px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+  }
+
+  .coffee-slider .arrow {
+    display: none;
+  }
+  .about-section .collage {
+    grid-template-columns: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .two,
+  .three {
+    display: none;
+  }
+  .collage {
+    display: flex;
+    max-width: 1360px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+  }
+  .collage img {
+    max-width: 726px;
+    max-height: 726px;
+    flex-shrink: 1;
+  }
+  .collage .grid-item {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    width: auto;
+  }
+
+  .mobile-app {
+    flex-direction: column;
+  }
+  .mobile-app .button-container {
+    flex-direction: column;
+  }
+
+  footer {
+    height: 100vh;
+    flex-direction: column;
+    padding: 60px 16px;
+    width: 100%;
+  }
+
+  footer article,
+  footer .contact-info {
+    width: 100%;
+    justify-content: center;
+  }
+  footer article h2 span {
+    display: inline-block;
+  }
+
+  footer,
+  section,
+  .header {
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+  }
+  footer article {
+    gap: 40px;
+  }
+  .phone-img img {
+    max-width: 350px;
+  }
+
+  .collage .one {
+    margin-bottom: 40px;
+    flex-shrink: 1;
+  }
+  .collage .two,
+  .collage .three {
+    display: none;
+  }
+
+  .coffee-menu {
+    margin: 0 16px;
+  }
+
+  .coffee-menu h2 {
+    width: 100%;
+  }
+
+  .offer {
+    grid-template-columns: 1fr;
+    max-width: 1360px;
+    align-self: stretch;
   }
 }
