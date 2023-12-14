@@ -600,6 +600,7 @@ footer h2 span {
 .active img {
   background-color: #e1d4c9;
 }
+
 .offer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -831,18 +832,17 @@ footer h2 span {
     content: none;
   }
   .menu-btn a:hover {
-    pointer-events: none;
-    right: 0;
+    position: static;
+    cursor: default;
   }
-  .menu-btn {
-    position: relative;
-  }
-
-  .menu-btn a:hover {
-    pointer-events: none;
-  }
-  .menu-btn span:hover {
-    pointer-events: none;
+  .menu-btn span::after {
+    content: " ";
+    background-image: url("./assets/coffee-icon-small.svg");
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 30%;
+    right: 50px;
   }
 
   .two,
@@ -894,15 +894,22 @@ footer h2 span {
     display: none;
   }
 
-  .menu-btn span::after {
-    content: " ";
-    background-image: url("./assets/coffee-icon-small.svg");
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    position: absolute;
-    top: 30%;
-    right: 50px;
+  .layout:hover {
+    transform: none;
+  }
+  a {
+    cursor: default;
+  }
+  .tab-item:hover,
+  tab-item:hover img {
+    background-color: initial;
+  }
+  .tab-item:hover a {
+    color: initial;
+  }
+  .tab-item:hover img,
+  .active img {
+    background-color: #c1b6ad;
   }
 }
 @media screen and (max-width: 768px) {
