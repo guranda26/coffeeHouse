@@ -800,7 +800,6 @@ footer h2 span {
   .image-text img {
     min-width: 768px;
     min-height: 644px;
-    padding: 0px, 40px, 0px, 40px;
     object-fit: cover;
   }
 
@@ -853,7 +852,6 @@ footer h2 span {
     max-width: 688px;
   }
   .collage .grid-item {
-    grid-area: 1 / 0 / 1 / 0;
     width: 688px;
   }
 
@@ -916,8 +914,6 @@ footer h2 span {
   .image-text img {
     min-width: 348px;
     min-height: 552px;
-    max-height: auto;
-    padding: 60px, 16px, 60px, 16px;
     object-fit: cover;
     border-radius: 40px;
   }
