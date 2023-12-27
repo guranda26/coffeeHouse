@@ -35,6 +35,7 @@ footer {
   width: 100%;
   border-radius: 40px;
 }
+
 .logo-img {
   width: 100px;
   height: auto;
@@ -55,12 +56,9 @@ footer {
   display: none;
 }
 .dropdown-menu {
-  /* width: 44px; */
-  /* border: 1px solid #665f55; */
   width: 16px;
   height: 8px;
   display: none;
-  /* padding: 6px; */
 }
 
 .dropdown-border {
@@ -79,9 +77,22 @@ footer {
   display: flex;
   width: 100%;
   justify-content: center;
+  overflow: hidden;
 }
 .image-text {
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
   position: relative;
+  overflow: hidden;
+}
+.image-text img {
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-text img:hover {
+  transform: scale(1.1);
 }
 .image-text article {
   position: absolute;
@@ -246,6 +257,7 @@ h1 ~ p {
 
 .coffee-slider .arrow:hover {
   background-color: #403f3d;
+  transition: 0.3s;
 }
 
 .coffee-slider .arrow .block:hover {
@@ -330,6 +342,10 @@ h3 {
   column-gap: 40px;
 }
 
+.about-section .grid-item {
+  width: 100%;
+}
+
 .collage .one {
   grid-row: 1 / span 2;
   grid-column: 1 / span 1;
@@ -353,6 +369,20 @@ h3 {
   grid-column: 2 / span 1;
   height: 590px;
   margin-top: auto;
+}
+
+.grid-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-item img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
 }
 
 section {
@@ -438,9 +468,11 @@ section {
 
 .mobile-app button:hover span {
   color: #e1d4c9;
+  transition: 0.3s;
 }
 .mobile-app button:hover {
   background-color: #403f3d;
+  transition: 0.3s;
 }
 
 .icon-hover {
@@ -489,6 +521,7 @@ footer .social-icons button {
 
 footer .social-icons button:hover {
   background-color: #e1d4c9;
+  transition: 0.3s;
 }
 .contact-info {
   color: #e1d4c9;
@@ -590,15 +623,18 @@ footer h2 span {
 .active,
 .tab-item:hover {
   background-color: #665f55;
+  transition: 0.3s;
 }
 .tab-item:hover a,
 .active a {
   color: #e1d4c9;
+  transition: 0.3s;
 }
 
 .tab-item:hover img,
 .active img {
   background-color: #e1d4c9;
+  transition: 0.3s;
 }
 
 .offer {
@@ -614,13 +650,16 @@ footer h2 span {
   flex-shrink: 0;
   border-radius: 40px;
   border: 1px solid #c1b6ad;
+  overflow: hidden;
 }
 
 .small-icon {
   width: 20px;
   height: 20px;
 }
+
 .layout:hover {
+  width: 100%;
   transform: scale(1.05);
 }
 .layout {
@@ -801,8 +840,12 @@ footer h2 span {
     min-width: 768px;
     min-height: 644px;
     object-fit: cover;
+    transition: none;
   }
 
+  .image-text img:hover {
+    transform: scale(1);
+  }
   .enjoy {
     width: 530px;
     justify-content: center;
@@ -908,6 +951,13 @@ footer h2 span {
   .tab-item:hover img,
   .active img {
     background-color: #c1b6ad;
+  }
+
+  .grid-item img {
+    transition: none;
+  }
+  .collage .grid-item:hover img {
+    transform: scale(1);
   }
 }
 @media screen and (max-width: 768px) {
