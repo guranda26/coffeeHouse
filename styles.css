@@ -204,7 +204,7 @@ h1 ~ p {
 
 .nav-menu li a::after {
   content: "";
-  height: 2px;
+  height: 6px;
   background: #403f3d;
   display: block;
   position: relative;
@@ -344,6 +344,7 @@ h3 {
 
 .about-section .grid-item {
   width: 100%;
+  border-radius: 20px;
 }
 
 .collage .one {
