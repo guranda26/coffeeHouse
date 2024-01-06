@@ -924,8 +924,9 @@ footer h2 span {
     justify-content: center;
     align-items: center;
   }
-  .coffee-slider {
-    max-width: fit-content;
+  #slider-coffee article p {
+    max-width: 100vw;
+    background-color: blue;
   }
 
   .coffee-slider .arrow,
