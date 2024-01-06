@@ -31,6 +31,9 @@ const rightButton = document.querySelector(".arrow");
 const leftButton = document.querySelector(".left");
 let currentIndex = 0;
 let interval;
+let startX,
+  startY,
+  threshold = 50;
 
 function showSlide(index) {
   sliderContainer.innerHTML = "";
@@ -59,18 +62,56 @@ function startSlider() {
 function pauseSlider() {
   clearInterval(interval);
 }
+
+function handleSwipe(startX, currentX) {
+  let diffX = startX - currentX;
+
+  if (Math.abs(diffX) > threshold) {
+    if (diffX > 0) {
+      // Swipe left, implement your logic for left swipe
+      pauseSlider();
+      currentIndex = (currentIndex + 1) % slider.length;
+      showSlide(currentIndex);
+      startSlider();
+    } else {
+      // Swipe right, implement your logic for right swipe
+      pauseSlider();
+      currentIndex = (currentIndex - 1 + slider.length) % slider.length;
+      showSlide(currentIndex);
+      startSlider();
+    }
+  }
+}
+
+document.addEventListener("touchstart", touchStartHandler, false);
+document.addEventListener("touchmove", touchMoveHandler, false);
+
+function touchStartHandler(event) {
+  startX = event.touches[0].clientX;
+  startY = event.touches[0].clientY;
+}
+
+function touchMoveHandler(event) {
+  let currentX = event.touches[0].clientX;
+  let currentY = event.touches[0].clientY;
+
+  handleSwipe(startX, currentX);
+}
+
 rightButton.addEventListener("click", () => {
   pauseSlider();
   currentIndex = (currentIndex + 1) % slider.length;
   showSlide(currentIndex);
   startSlider();
 });
+
 leftButton.addEventListener("click", () => {
   pauseSlider();
   currentIndex = (currentIndex - 1 + slider.length) % slider.length;
   showSlide(currentIndex);
   startSlider();
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   startSlider();
 
@@ -82,29 +123,3 @@ document.addEventListener("DOMContentLoaded", () => {
     sliderContainer.addEventListener("mouseup", startSlider, { once: true });
   });
 });
-
-// let touchStartX = 0;
-
-// sliderContainer.addEventListener("touchstart", (e) => {
-//   touchStartX = e.touches[0].clientX;
-//   pauseSlider();
-// });
-
-// sliderContainer.addEventListener("touchmove", (e) => {
-//   const touchEndX = e.touches[0].clientX;
-//   const touchDiff = touchEndX - touchStartX;
-
-//   if (touchDiff > 50) {
-//     // Swipe right
-//     currentIndex = (currentIndex - 1 + slider.length) % slider.length;
-//     showSlide(currentIndex);
-//   } else if (touchDiff < -50) {
-//     // Swipe left
-//     currentIndex = (currentIndex + 1) % slider.length;
-//     showSlide(currentIndex);
-//   }
-// });
-
-// sliderContainer.addEventListener("touchend", () => {
-//   startSlider();
-// });
