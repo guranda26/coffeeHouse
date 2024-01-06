@@ -26,27 +26,32 @@
             <a href="#home" class="logo-img"
               ><img src="./assets/logo.png" alt="company logo"
             /></a>
-            <a
-              href="burgerMenu.html#burger-menu"
-              class="dropdown-border"
-              id="header-menu"
-              ><img
-                src="./assets/dropdown-menu.svg"
-                alt="button-icon"
-                class="dropdown-menu"
-            /></a>
+            <div class="burger-icon" id="burger-icon">
+              <span></span>
+              <span></span>
+            </div>
           </div>
           <div class="text-content">
             <nav class="nav-bar">
               <ul>
-                <li><a href="#favorites-coffee">Favorite coffee</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#mobile-app">Mobile app</a></li>
-                <li><a href="#contact">Contact us</a></li>
+                <li>
+                  <a class="burg-link" href="#favorites-coffee"
+                    >Favorite coffee</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="burg-link">About</a>
+                </li>
+                <li>
+                  <a href="#mobile-app" class="burg-link">Mobile app</a>
+                </li>
+                <li>
+                  <a class="burg-link" href="#contact">Contact us</a>
+                </li>
               </ul>
             </nav>
             <span class="menu-click">
-              <a href="./menu.html"
+              <a href="./menu.html" id="menu-click-btn"
                 >Menu
                 <img src="./assets/coffee-cup.svg" alt="coffee cup icon" />
               </a>
@@ -54,6 +59,12 @@
           </div>
         </div>
         <div class="image-text">
+          <!-- <video width="1000" controls>
+            <source
+              src="https://www.pexels.com/ru-ru/video/2909914/"
+              type="video/mp4"
+            />
+          </video> -->
           <img src="./assets/img-hero.jpeg" alt="main coffee image" />
           <article class="enjoy">
             <h1><span>Enjoy</span> premium coffee at our charming cafe</h1>
@@ -72,18 +83,18 @@
       <main>
         <section class="coffee-slider" id="favorites-coffee">
           <h2>Choose your <span>favorite</span> coffee</h2>
-          <article>
-            <img src="./assets/coffee-slider-1.png" alt="Frappuccino" />
+          <div id="slider-coffee">
+            <!-- <img src="./assets/coffee-slider-1.png" alt="Frappuccino" />
             <h3>S’mores Frappuccino</h3>
             <p>
               This new drink takes an espresso and mixes it with brown sugar and
               cinnamon before being topped with oat milk.
             </p>
-            <p>$5.50</p>
-          </article>
+            <p>$5.50</p> -->
+          </div>
           <button class="arrow">
             <img
-              src="./assets/arrow-right.png"
+              src="./assets/button-default.svg"
               alt="right arrow"
               class="block"
             />
@@ -106,9 +117,9 @@
             />
           </button>
           <div class="slider-lines">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="slider-line"></span>
+            <span class="slider-line"></span>
+            <span class="slider-line"></span>
           </div>
         </section>
         <section class="about-section" id="about">
@@ -240,5 +251,7 @@
         </div>
       </footer>
     </div>
+    <script src="./script.js" defer></script>
+    <script src="./slider.js"></script>
   </body>
 </html>
