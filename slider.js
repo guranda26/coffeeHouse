@@ -68,13 +68,11 @@ function handleSwipe(startX, currentX) {
 
   if (Math.abs(diffX) > threshold) {
     if (diffX > 0) {
-      // Swipe left, implement your logic for left swipe
       pauseSlider();
       currentIndex = (currentIndex + 1) % slider.length;
       showSlide(currentIndex);
       startSlider();
     } else {
-      // Swipe right, implement your logic for right swipe
       pauseSlider();
       currentIndex = (currentIndex - 1 + slider.length) % slider.length;
       showSlide(currentIndex);
@@ -82,9 +80,6 @@ function handleSwipe(startX, currentX) {
     }
   }
 }
-
-document.addEventListener("touchstart", touchStartHandler, false);
-document.addEventListener("touchmove", touchMoveHandler, false);
 
 function touchStartHandler(event) {
   startX = event.touches[0].clientX;
@@ -97,6 +92,9 @@ function touchMoveHandler(event) {
 
   handleSwipe(startX, currentX);
 }
+
+document.addEventListener("touchstart", touchStartHandler, false);
+document.addEventListener("touchmove", touchMoveHandler, false);
 
 rightButton.addEventListener("click", () => {
   pauseSlider();
