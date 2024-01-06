@@ -1093,6 +1093,9 @@ footer h2 span {
   ul li {
     text-decoration: none;
   }
+  section {
+    max-height: 100vh;
+  }
 }
 @media screen and (max-width: 768px) {
   body {
