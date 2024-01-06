@@ -896,7 +896,7 @@ footer h2 span {
   }
 
   .coffee-menu {
-    margin: 0 40px;
+    margin: 0 auto;
   }
   .image-text img {
     max-width: auto;
@@ -1116,7 +1116,7 @@ footer h2 span {
   .image-text article {
     left: 0;
     top: 5em;
-    margin: 0 1em;
+    margin: 0 auto;
     width: auto;
   }
   .coffee-slider h2 {
@@ -1196,8 +1196,7 @@ footer h2 span {
   footer,
   section,
   .header {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin: auto;
     width: auto;
   }
   footer article {
