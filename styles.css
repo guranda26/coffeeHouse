@@ -906,6 +906,7 @@ footer h2 span {
     max-width: 530px;
     justify-content: center;
     align-items: flex-start;
+    height: max-content;
   }
 
   .enjoy h1 {
@@ -959,6 +960,7 @@ footer h2 span {
   }
   #slider-coffee article p {
     width: auto;
+    max-width: 100%;
   }
 
   .mobile-app {
@@ -1117,8 +1119,8 @@ footer h2 span {
 
   .image-text article {
     left: 0;
-    top: 5em;
-    margin: 0 1em;
+    top: auto;
+    margin: 1em;
     width: auto;
   }
   .coffee-slider h2 {
