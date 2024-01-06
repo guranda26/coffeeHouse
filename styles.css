@@ -868,13 +868,6 @@ footer h2 span {
   .menu-click {
     justify-content: center;
   }
-  /* .hide-nav .menu-click {
-    display: none;
-  } */
-  /* .hide-nav.nav-bar,
-  .hide-nav .nav-bar ul {
-    display: none;
-  } */
   .header-menu {
     max-width: 44px;
     height: 44px;
@@ -1199,8 +1192,8 @@ footer h2 span {
   footer,
   section,
   .header {
-    margin-left: 16px;
-    margin-right: 16px;
+    /* margin-left: 16px; */
+    /* margin-right: 16px; */
     width: auto;
   }
   footer article {
