@@ -1122,6 +1122,8 @@ footer h2 span {
     top: auto;
     margin: 1em;
     width: auto;
+    min-height: 430px;
+    /* padding: 60px 16px; */
   }
   .coffee-slider h2 {
     text-align: center;
