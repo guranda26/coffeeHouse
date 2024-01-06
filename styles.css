@@ -924,6 +924,9 @@ footer h2 span {
     justify-content: center;
     align-items: center;
   }
+  .coffee-slider {
+    max-width: fit-content;
+  }
 
   .coffee-slider .arrow,
   .button-container,
