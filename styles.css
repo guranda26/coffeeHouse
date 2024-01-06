@@ -961,7 +961,6 @@ footer h2 span {
   }
   #slider-coffee article p {
     width: auto;
-    background-color: blue;
   }
 
   .mobile-app {
@@ -1095,21 +1094,7 @@ footer h2 span {
   .about-section,
   .mobile-app,
   footer {
-  }
-  .header {
-    background-color: red;
-  }
-  .coffee-slider {
-    background-color: yellow;
-  }
-  .about-section {
-    background-color: blue;
-  }
-  .mobile-app {
-    background-color: orange;
-  }
-  footer {
-    background-color: tomato;
+    width: auto;
   }
 }
 @media screen and (max-width: 768px) {

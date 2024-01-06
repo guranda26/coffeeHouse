@@ -51,14 +51,11 @@ clickMenu.addEventListener("click", () => {
   navMenu.classList.remove("burger-icon");
 });
 
-// Get the right arrow button
 const rightArrowButton = document.querySelector(".arrow");
 
-// Function to simulate a click on the right arrow button
 const clickRightArrow = () => {
   rightArrowButton.click();
 };
 
-// Set the time interval for automatic scrolling (e.g., every 5 seconds)
-const intervalDuration = 5000; // 5000 milliseconds = 5 seconds
+const intervalDuration = 5000;
 setInterval(clickRightArrow, intervalDuration);
