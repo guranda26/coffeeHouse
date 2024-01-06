@@ -963,6 +963,10 @@ footer h2 span {
     max-width: 100%;
   }
 
+  #slider-coffee {
+    max-width: 100vw;
+  }
+
   .mobile-app {
     flex-direction: column;
   }
