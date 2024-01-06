@@ -925,6 +925,11 @@ footer h2 span {
     pointer-events: none;
   }
 
+  .coffee-slider > article > img,
+  .coffee-slider p {
+    width: auto;
+  }
+
   .menu-btn a:hover::after {
     content: none;
   }
@@ -1097,6 +1102,7 @@ footer h2 span {
   .image-text img {
     width: auto;
     min-height: 552px;
+    max-height: auto;
     object-fit: cover;
     border-radius: 40px;
   }
