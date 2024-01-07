@@ -687,10 +687,39 @@ footer h2 span {
   transition: 0.3s;
 }
 
+.coffee-menu {
+  /* position: relative; */
+}
 .offer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
+}
+.offer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  position: relative;
+}
+.load-btn {
+  position: absolute;
+  bottom: -50px;
+  left: 45%;
+  display: flex;
+  padding: 8px 15px;
+  border-radius: 10px;
+  background-color: #b0907a;
+  background-color: red;
+  color: aliceblue;
+  display: none;
+}
+#coffee-offer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .menu-items {
   display: flex;
@@ -821,9 +850,6 @@ footer h2 span {
   font-weight: 400;
   line-height: 24px;
 }
-/* .nav-menu {
-  background-color: aquamarine;
-} */
 
 @media screen and (max-width: 1400px) {
   body {
@@ -889,9 +915,6 @@ footer h2 span {
     text-decoration: none;
   }
 
-  .coffee-menu {
-    margin: 0 40px;
-  }
   .image-text img {
     max-width: 100%;
     min-height: 644px;
@@ -983,26 +1006,12 @@ footer h2 span {
     justify-content: center;
   }
 
-  .offer {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 40px;
-    justify-items: center;
-    align-items: center;
-    margin-bottom: 100px;
-  }
-  .espresso,
+  /* .espresso,
   .latte,
   .latte-macchiato,
   .coffee-cognac {
     display: none;
-  }
-  .menu-items:nth-child(5),
-  .menu-items:nth-child(6),
-  .menu-items:nth-child(7),
-  .menu-items:nth-child(8) {
-    display: none;
-  }
+  } */
 
   .layout:hover {
     transform: none;
@@ -1100,9 +1109,11 @@ footer h2 span {
   footer {
     width: auto;
   }
-
-  .description {
-    max-width: 100vw;
+  .coffee-menu {
+    margin: 0 40px;
+  }
+  footer {
+    margin-top: 40px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1243,5 +1254,25 @@ footer h2 span {
     grid-template-columns: 1fr;
     max-width: 1360px;
     align-self: stretch;
+  }
+  .offer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  .menu-items:nth-child(5),
+  .menu-items:nth-child(6),
+  .menu-items:nth-child(7),
+  .menu-items:nth-child(8) {
+    display: none;
+  }
+  .load-btn {
+    display: block;
+  }
+  .hidden-btn {
+    display: none;
   }
 }

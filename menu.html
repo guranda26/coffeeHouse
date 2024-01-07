@@ -53,16 +53,16 @@
         </div>
       </header>
       <main>
-        <section class="coffee-menu" id="coffee-menu">
+        <section class="coffee-menu">
           <div class="second-header">
             <h2>
               Behind each of our cups hides an <span>amazing surprise</span>
             </h2>
             <div class="tabs">
               <ul>
-                <li class="tab-item active">
+                <li class="tab-item active" id="coffee-menu">
                   <div>
-                    <a href="#coffee-menu"
+                    <a href="#" onclick="showCoffeeMenu()"
                       ><img
                         src="./assets/coffee-icon.png"
                         alt="coffee icon"
@@ -70,27 +70,29 @@
                     >
                   </div>
                 </li>
-                <li class="tab-item">
+                <li class="tab-item" id="tea-menu">
                   <div>
-                    <a href="teamenu.html#tea-menu"
+                    <a href="#" onclick="showTeaMenu()"
                       ><img src="./assets/tea-icon.png" alt="tea icon" />tea</a
                     >
                   </div>
                 </li>
-                <li class="tab-item">
-                  <a href="dessertmenu.html#dessert-menu"
-                    ><img
-                      src="./assets/dessert-icon.png"
-                      alt="dessert icon"
-                    />dessert</a
-                  >
+                <li class="tab-item" id="dessert-menu">
+                  <div>
+                    <a href="#" onclick="showDessertMenu()"
+                      ><img
+                        src="./assets/dessert-icon.png"
+                        alt="dessert icon"
+                      />dessert</a
+                    >
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div class="offer">
-            <article class="menu-items">
+          <div class="offer" id="coffee-offer">
+            <!-- <article class="menu-items">
               <div class="layout irish-coffee"></div>
               <div class="text-container">
                 <div class="title">
@@ -181,8 +183,11 @@
                 </div>
                 <span>&dollar;6.50</span>
               </div>
-            </article>
+            </article> -->
           </div>
+          <div class="offer" id="tea-offer"></div>
+          <div class="offer" id="dessert-offer"></div>
+          <button id="load-more-btn" class="load-btn">Load More</button>
         </section>
       </main>
       <footer id="contact">
@@ -245,5 +250,6 @@
         </div>
       </footer>
     </div>
+    <script src="./menu.js"></script>
   </body>
 </html>

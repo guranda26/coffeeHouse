@@ -41,7 +41,7 @@ function showSlide(index) {
   article.innerHTML = `
     <img src="${slider[index].source}" alt="${slider[index].thumbnail}" />
     <h3>${slider[index].title}</h3>
-    <p class="description>${slider[index].description}</p>
+    <p>${slider[index].description}</p>
     <p>${slider[index].price}</p>
   `;
 

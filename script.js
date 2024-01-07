@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   burgLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      event.preventDefault();
+      event.stopimmediatepropagation();
       const hrefAttribute = link.getAttribute("href");
       if (hrefAttribute) {
         const targetId = hrefAttribute.substring(1);
