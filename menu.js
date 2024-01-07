@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const article = document.createElement("article");
     article.classList.add("menu-items");
+
+    article.addEventListener("click", () => openModal(item, image.src));
+
     article.innerHTML = `
       <div class="layout"><img src="${image.src}" alt="${item.name}" /></div>
       <div class="text-container">

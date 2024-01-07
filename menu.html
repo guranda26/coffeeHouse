@@ -188,6 +188,58 @@
           <div class="offer" id="tea-offer"></div>
           <div class="offer" id="dessert-offer"></div>
           <button id="load-more-btn" class="load-btn">Load More</button>
+          <div class="modal" id="myModal">
+            <div class="modal-img"></div>
+            <div class="modal-content">
+              <article class="item-description">
+                <h3></h3>
+                <p></p>
+              </article>
+              <article class="item-sizes">
+                <h4>Size</h4>
+                <div class="selected-size">
+                  <a href="#" onclick="selectSize('S')"
+                    ><span>S</span><span class="item-size">Small</span></a
+                  >
+                </div>
+                <div>
+                  <a href="#" onclick="selectSize('M')"
+                    ><span>M</span><span class="item-size">Medium</span></a
+                  >
+                </div>
+                <div>
+                  <a href="#" onclick="selectSize('L')"
+                    ><span>L</span><span class="item-size">Large</span></a
+                  >
+                </div>
+              </article>
+              <article class="item-additives">
+                <h4>Additives</h4>
+
+                <div class="selected-additives">
+                  <a href="#"
+                    ><span class="numb">1</span><span class="additives"></span
+                  ></a>
+                  <a href="#"
+                    ><span class="numb">1</span><span class="additives"></span
+                  ></a>
+                  <a href="#"
+                    ><span class="numb">1</span><span class="additives"></span
+                  ></a>
+                </div>
+                <!-- <div class="selected-additives">
+                  <a href="#"><span>2</span><span class="additives"></span></a>
+                </div>
+                <div>
+                  <a href="#"><span>3</span><span class="additives"></span></a>
+                </div> -->
+              </article>
+              <article class="total"></article>
+              <div class="cost"></div>
+              <button></button>
+              <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+          </div>
         </section>
       </main>
       <footer id="contact">
@@ -251,5 +303,6 @@
       </footer>
     </div>
     <script src="./menu.js"></script>
+    <script src="./modal.js"></script>
   </body>
 </html>
