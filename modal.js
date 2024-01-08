@@ -4,27 +4,36 @@ function openModal(item, imageUrl) {
   const modal = document.querySelector(".modal");
   const modalImg = modal.querySelector(".modal-img");
   const modalContent = modal.querySelector(".modal-content");
-  const selectedSizeElement = modalContent.querySelector(".selected-size");
-  const selectedAdditivesElement = modalContent.querySelector(
-    ".item-additives div"
-  );
 
-  // Set the modal image
+  console.log(imageUrl);
+  modalContent.style.height = "150%";
+  // modal.style.height = "150%";
+
   modalImg.style.backgroundImage = `url('${imageUrl}')`;
+  const img = document.createElement("img");
+  img.src = imageUrl;
+  img.alt = item.name;
 
-  // Populate modal content with item details
+  modalImg.innerHTML = "";
+
+  modalImg.appendChild(img);
+
+  document.body.style.overflow = "hidden";
+
   modalContent.querySelector("h3").textContent = item.name;
   modalContent.querySelector("p").textContent = item.description;
 
   const sizesContainer = modalContent.querySelector(".item-sizes");
   sizesContainer.innerHTML = "";
+  const sizesHeading = document.createElement("h4");
+  sizesHeading.innerHTML = "Size";
 
   Object.keys(item.sizes).forEach((sizeKey) => {
     const size = item.sizes[sizeKey];
 
     const sizeLink = document.createElement("a");
     sizeLink.href = "#";
-    sizeLink.onclick = () => selectSize(sizeKey); // Call the selectSize function on click
+    sizeLink.onclick = () => selectSize(sizeKey);
 
     const sizeSpan1 = document.createElement("span");
     sizeSpan1.textContent = sizeKey;
@@ -38,55 +47,9 @@ function openModal(item, imageUrl) {
     const sizeDiv = document.createElement("div");
     sizeDiv.appendChild(sizeLink);
 
-    sizesContainer.appendChild(sizeDiv);
+    sizesContainer.append(sizeDiv);
   });
-  // function updatePrice() {
-  //   // Assuming 'item' is the product object with the initial price
-  //   let finalPrice = parseFloat(item.price);
 
-  //   // Adjust the final price based on the selected size
-  //   if (selectedSize === "m") {
-  //     finalPrice += 0.5;
-  //   } else if (selectedSize === "l") {
-  //     finalPrice += 1.0;
-  //   }
-
-  //   // Adjust the final price based on selected additives (you'll need to implement this logic)
-  //   // For example, you might have an array of selected additives and add their prices here
-
-  //   // Update the displayed price in the modal
-  //   const costDiv = modalContent.querySelector(".cost");
-  //   costDiv.textContent = `$${finalPrice.toFixed(2)}`;
-  // }
-  // function updatePrice() {
-  //   // Assuming 'item' is the product object with the initial price
-  //   let finalPrice = parseFloat(item.price);
-
-  //   // Adjust the final price based on the selected size
-  //   if (selectedSize === "m") {
-  //     finalPrice += 0.5;
-  //   } else if (selectedSize === "l") {
-  //     finalPrice += 1.0;
-  //   }
-
-  //   // Adjust the final price based on selected additives
-  //   const selectedAdditives = getSelectedAdditives();
-  //   selectedAdditives.forEach(() => {
-  //     finalPrice += 0.5; // Each selected additive increases the price by $0.50
-  //   });
-
-  //   // Update the displayed price in the modal
-  //   const costDiv = modalContent.querySelector(".cost");
-  //   costDiv.textContent = `$${finalPrice.toFixed(2)}`;
-
-  //   // Display the selected additives to the user
-  //   const selectedAdditivesDiv = modalContent.querySelector(
-  //     ".item-additives div"
-  //   );
-  //   selectedAdditivesDiv.textContent = selectedAdditives
-  //     .map((additive) => additive.name)
-  //     .join(", ");
-  // }
   function updatePrice() {
     let finalPrice = parseFloat(item.price);
 
@@ -103,26 +66,15 @@ function openModal(item, imageUrl) {
     costDiv.textContent = `$${finalPrice.toFixed(2)}`;
 
     const selectedAdditivesDiv = modalContent.querySelector(
-      ".selected-additives"
+      ".item-additives .selected-additives"
     );
-    selectedAdditivesDiv.textContent = selectedAdditives
-      .map((additive) => additive.name)
-      .join(", ");
-  }
 
-  // Helper function to get selected additives
-  // function getSelectedAdditives() {
-  //   const selectedAdditives = [];
-  //   const additiveOptions = modalContent.querySelectorAll(
-  //     ".item-additives div"
-  //   );
-  //   additiveOptions.forEach((additiveOption, index) => {
-  //     if (additiveOption.classList.contains("selected")) {
-  //       selectedAdditives.push(item.additives[index]);
-  //     }
-  //   });
-  //   return selectedAdditives;
-  // }
+    if (selectedAdditivesDiv) {
+      selectedAdditivesDiv.textContent = selectedAdditives
+        .map((additive) => additive.name)
+        .join(", ");
+    }
+  }
 
   function getSelectedAdditives() {
     const selectedAdditives = [];
@@ -147,14 +99,6 @@ function openModal(item, imageUrl) {
     });
   });
 
-  // const additiveOptions = modalContent.querySelectorAll(".item-additives div");
-  // additiveOptions.forEach((additiveOption) => {
-  //   additiveOption.addEventListener("click", () => {
-  //     // Handle the logic for adding or removing additives
-  //     updatePrice();
-  //   });
-  // });
-
   const additiveOptions = modalContent.querySelectorAll(".item-additives div");
   additiveOptions.forEach((additiveOption, index) => {
     additiveOption.addEventListener("click", () => {
@@ -163,7 +107,6 @@ function openModal(item, imageUrl) {
     });
   });
 
-  // Populate additives
   const additivesContainer = modalContent.querySelector(".item-additives div");
   additivesContainer.innerHTML = "";
   item.additives.forEach((additive) => {
@@ -180,11 +123,8 @@ function openModal(item, imageUrl) {
   const costDiv = modalContent.querySelector(".cost");
   costDiv.textContent = `$${item.price}`;
 
-  // Assuming 'selectSize' is the variable containing the selected size
-
-  // Set button text
   const button = modalContent.querySelector("button");
-  button.textContent = "Add to Cart";
+  button.textContent = "Close";
 
   // Show the modal
   modal.style.display = "flex";
@@ -206,17 +146,10 @@ window.onclick = function (event) {
 
 function selectSize(size) {
   selectedSize = size;
-
-  // Add your logic to update the UI based on the selected size
-  // For example, you can highlight the selected size in the modal
   updateSizeUI();
 }
 
-// Function to update the UI based on the selected size
 function updateSizeUI() {
-  // Add your logic to update the UI based on the selected size
-  // For example, you can highlight the selected size in the modal
-  // Access the selected size using the 'selectedSize' variable
   console.log("Selected size:", selectedSize);
   console.log(selectedSize);
 }
