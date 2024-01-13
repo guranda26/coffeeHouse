@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     src: `../assets/coffee-menu-${index + 1}.jpeg`,
   }));
   const teaImages = Array.from({ length: 4 }, (_, index) => ({
-    src: `/assets/tea-${index + 1}.png`,
+    src: `../assets/tea-${index + 1}.png`,
   }));
   const dessertImages = Array.from({ length: 8 }, (_, index) => ({
-    src: `/assets/dessert-${index + 1}.png`,
+    src: `../assets/dessert-${index + 1}.png`,
   }));
 
   fetch("./products.json")
