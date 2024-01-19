@@ -85,6 +85,7 @@ function checkLoad() {
 }
 
 const teaTab = document.getElementById("tea-offer");
+
 const coffeeTab = document.getElementById("coffee-offer");
 const dessertTab = document.getElementById("dessert-offer");
 // Add click event listener to the tabs
